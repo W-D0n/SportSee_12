@@ -1,9 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './assets/styles/main.css'
-import { Home, Dashboard, Error404 } from './pages'
-import App from './App'
+
+import { Home } from './pages/Home';
+import { Dashboard } from './pages/Dashboard';
+import { Error404 } from './pages/Error404';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,8 +13,8 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="error404" element={<Error404 />} />
+          <Route path="user/:id" element={<Dashboard />} />
+          <Route path="*" element={<Error404 />} />
         </Route>
       </Routes>
     </Router>
