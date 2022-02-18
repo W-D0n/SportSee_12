@@ -8,19 +8,23 @@ import MuscleIcon from '../../assets/img/muscle-icon.svg';
 
 const Container = styled.div`
 display: flex;
-width:117px
-height: 100%;
+flex-direction: column;
 align-items: center;
 justify-content: center;
+gap: 10rem;
+width: 117px;
+height: 1024px;
 background-color:#000000;
 color: white;
 box-shadow: 0px 4px 4px 0px #000000;
 `
 const SideMenu = styled.ul`
-  width: 100%;
-  display: flex;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  margin-top:4rem;
   justify-content: space-evenly;
-  list-style: none;
   font-weight: 500;
   font-size: 24px;
   line-height: 24px;
@@ -31,22 +35,23 @@ font-style: normal;
 font-weight: 500;
 line-height: 24px;
 letter-spacing: 0px;
-text-align: left;
+writing-mode: sideways-lr;
 `
 
 const Sidebar = () => {
   const sideArray = [
-    MeditationIcon,
-    SwimmingIcon,
-    BikingIcon,
-    MuscleIcon
+    { title: 'MeditationIcon', path: '/#', src: MeditationIcon },
+    { title: 'SwimmingIcon', path: '/#', src: SwimmingIcon },
+    { title: 'BikingIcon', path: '/#', src: BikingIcon },
+    { title: 'MuscleIcon', path: '/#', src: MuscleIcon }
   ]
+
   return (
-    <Container>
-      <SideMenu>
+    <Container className='Sidebar'>
+      <SideMenu className='SideItems'>
         {sideArray.map((e, i) => (
-          <Link key={i} to={`/#`}>
-            <img src={e} alt='accomodation thumbnail' />
+          <Link key={i} to={e.path}>
+            <img src={e.src} alt={`${e.title} icon`} />
           </Link>
         ))}
       </SideMenu>

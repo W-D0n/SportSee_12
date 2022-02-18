@@ -13,14 +13,13 @@ const Container = styled.div`
   box-shadow: 0px 4px 4px 0px #000000;
 `
 const Logo = styled.img`
-  margin-inline: 1rem;
+  margin-inline: 2rem;
 `
 const Menu = styled.ul`
   width: 100%;
   color: white;
-  display: flex;  
+  display: flex;
   justify-content: space-evenly;
-  list-style: none;
   font-weight: 500;
   font-size: 24px;
   line-height: 24px;
@@ -28,18 +27,18 @@ const Menu = styled.ul`
 
 const Header = () => {
   const menuArray = [
-    'Accueil',
-    'Profil',
-    'Réglage',
-    'Communauté'
+    { title: 'Accueil', path: '/home' },
+    { title: 'Profil', path: '/profil' },
+    { title: 'Réglage', path: '/settings' },
+    { title: 'Communauté', path: '/comunity' }
   ]
   return (
-    <Container>
+    <Container className='Header'>
       <Logo src={LogoImg} alt='Sportsee logo' />
       <Menu>
         {menuArray.map((e, i) => (
-          <Link key={i} to={`/#`}>
-            <li>{e}</li>
+          <Link key={i} to={e.path}>
+            <li>{e.title}</li>
           </Link>
         ))}
       </Menu>
