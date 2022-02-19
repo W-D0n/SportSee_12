@@ -1,33 +1,41 @@
-// import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-// import styled from 'styled-components';
-// import { UserMetrics, UserAverageSession, UserDaily, UserPerformance, UserScore } from './../components/ui'
-import { UserMetrics } from './../components/ui'
+// import { useParams } from 'react-router-dom';
+// import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+// import { USER_PERFORMANCE, USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_MAIN_DATA } from '../assets/data/mock'; //Import des data provisoire
+import { Welcome, Tracking, Metrics, Performance } from './../components/ui';
 
-// const Container = styled.div``
 
 export const Dashboard = () => {
-  // console.log('Rendering Dashboard')
-  let params = useParams();
-  // console.log('params :', params)
-  console.log('params id :', params.id)
-  // console.log('typeof id :', typeof (parseInt(params.id)))
+  // let { id } = useParams();
+  // let { data, setData } = useState({});
 
-  // const { user, activity, averageSessions, performance } = fonction service qui récupère les datas;
+  // data = {
+  //   user: USER_MAIN_DATA,
+  //   activity: USER_ACTIVITY,
+  //   sessions: USER_AVERAGE_SESSIONS,
+  //   performance: USER_PERFORMANCE
+  // }
+
+  // useEffect(() => { }, [data]);
+
   return (
-    <>
-      <h1>Dashboard</h1>
-      <div>
-        <UserMetrics />
-      </div>
-    </>
-
-    // <Container>
-    // <UserMetrics />
-    //   <UserAverageSession />
-    //   <UserDaily />
-    //   <UserPerformance />
-    //   <UserScore />
-    // </Container>
+    <Container>
+      <Welcome />
+      <GraphContainer>
+        <Tracking />
+        <Performance />
+        <Metrics />
+      </GraphContainer>
+    </Container>
   )
 };
+
+
+const Container = styled.div`
+  display: grid;
+  width: 100%
+
+`
+const GraphContainer = styled.div`
+  display: grid;
+`

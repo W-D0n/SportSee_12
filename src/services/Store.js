@@ -19,7 +19,12 @@ const Store = {
           reject(error)
         })
     })
-  }
+  },
+
+  // getUser:(url) =>{},
+  // getActivities:(url) =>{},
+  // getSessions:(url) =>{},
+  // getPerformance:(url) =>{}
 }
 
 export default Store;

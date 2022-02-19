@@ -1,7 +1,10 @@
-export { default as Card } from './PerformanceCard';
+export { default as MetricsCard } from './MetricsCard';
+export { default as PerfCard } from './PerfCard';
 export { default as Loader } from './Loader';
-export { default as UserAverageSession } from './UserAverageSession';
-export { default as UserDaily } from './UserDaily';
-export { default as UserMetrics } from './UserMetrics';
-export { default as UserPerformance } from './UserPerformance';
-export { default as UserScore } from './UserScore';
+export { default as Welcome } from './Welcome';
+export { default as Session } from './Session';
+export { default as Metrics } from './Metrics';
+export { default as Tracking } from './Tracking';
+export { default as Performance } from './Performance';
+export { default as Score } from './Score';
+export { default as Stats } from './Stats';

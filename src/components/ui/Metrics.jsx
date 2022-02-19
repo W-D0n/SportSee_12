@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+
 import { useNavigate } from 'react-router-dom';
 import Calories from '../../assets/img/calories-icon.svg';
 import Proteines from '../../assets/img/protein-icon.svg';
 import Glucides from '../../assets/img/carbs-icon.svg';
 import Lipides from '../../assets/img/fat-icon.svg';
-import Card from './MetricCard';
+import MetricsCard from './MetricsCard';
 
-const Div = styled.div``
+const Container = styled.div``
 
-const UserMetrics = () => {
+const Metrics = () => {
   const navigate = useNavigate();
 
   const mokeKeyData = {
@@ -25,17 +26,17 @@ const UserMetrics = () => {
   ];
 
   return (
-    <Div>
+    <Container>
       {data ?
         data.map((e, i) => (
           //Version longue...
           // <Card key={i} title={e.title} src={e.iconSrc} value={e.value} unit={e.unit} />
-          <Card key={i} {...e} />
+          <MetricsCard key={i} {...e} />
         ))
         :
         navigate('/error')}
-    </Div>
+    </Container>
   );
 }
 
-export default UserMetrics;
+export default Metrics;
