@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const MetricsCard = ({ title, iconSrc, value, unit }) => {
 
@@ -14,10 +14,10 @@ const MetricsCard = ({ title, iconSrc, value, unit }) => {
   )
 }
 MetricsCard.propTypes = {
-  title: PropTypes.string,
-  iconSrc: PropTypes.string,
-  value: PropTypes.number,
-  unit: PropTypes.string
+  title: propTypes.string,
+  iconSrc: propTypes.string,
+  value: propTypes.number,
+  unit: propTypes.string
 };
 
 export default MetricsCard;

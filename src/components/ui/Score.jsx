@@ -1,11 +1,10 @@
-import PerfCard from './PerfCard';
-import { RenderPieChart as Pie } from '../graph/RenderPieChart';
+// import styled from 'styled-components';
+// import propTypes from 'prop-types';
 
 const Score = () => {
   return (
-    <PerfCard>
-      <Pie />
-    </PerfCard>
+    <>
+    </>
   );
 }
 export default Score;

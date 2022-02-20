@@ -1,5 +1,4 @@
 export { default as MetricsCard } from './MetricsCard';
-export { default as PerfCard } from './PerfCard';
 export { default as Loader } from './Loader';
 export { default as Welcome } from './Welcome';
 export { default as Session } from './Session';

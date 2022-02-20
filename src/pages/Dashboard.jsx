@@ -9,7 +9,7 @@ export const Dashboard = () => {
   //  IL FAUT METTRE ICI LA RECUP DES DATA POUR LES GRAPHS
   //  POUR LES DISPATCHER ENSUITE DANS LES COMPONENTS.
 
-  
+
   // let { id } = useParams();
   // let { data, setData } = useState({});
 
@@ -21,14 +21,29 @@ export const Dashboard = () => {
   // }
 
   // useEffect(() => { }, [data]);
+  const user = {
+    id: 18,
+    userInfos: {
+      firstName: 'Cecilia',
+      lastName: 'Ratorez',
+      age: 34,
+    },
+    todayScore: 0.3,
+    keyData: {
+      calorieCount: 2500,
+      proteinCount: 90,
+      carbohydrateCount: 150,
+      lipidCount: 120
+    }
+  }
 
   return (
     <Container>
-      <Welcome />
+      <Welcome {...user.userInfos} />
       <GraphContainer>
         <Tracking />
-        <Performance />
-        <Metrics />
+        <Performance score={user.todayScore} />
+        <Metrics {...user.keyData} />
       </GraphContainer>
     </Container>
   )
