@@ -6,6 +6,10 @@ import { Welcome, Tracking, Metrics, Performance } from './../components/ui';
 
 
 export const Dashboard = () => {
+  //  IL FAUT METTRE ICI LA RECUP DES DATA POUR LES GRAPHS
+  //  POUR LES DISPATCHER ENSUITE DANS LES COMPONENTS.
+
+  
   // let { id } = useParams();
   // let { data, setData } = useState({});
 
