@@ -1,8 +1,6 @@
-// import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import propTypes from 'prop-types';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 
 const Tracking = () => {
@@ -46,13 +44,13 @@ const Tracking = () => {
 
   return (
     <Section>
-      <Legend>
+      <Header>
         <h2>Activité quotidienne</h2>
         <ul>
           <li>Poids (kg)</li>
           <li>Calories brûlées (kCal)</li>
         </ul>
-      </Legend>
+      </Header>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart data={data} width={500} height={300} barGap={8} >
           <CartesianGrid strokeDasharray='2' vertical={false} />
@@ -81,7 +79,7 @@ const Tracking = () => {
       </ResponsiveContainer>
     </Section>
   );
-}
+};
 
 export default Tracking;
 
@@ -112,12 +110,12 @@ border-radius: 5px;
 display: flex;
 flex-direction: column;
 padding: 1.5rem;
-box-shadow: -8px 5px 8px -2px rgba(0, 0, 0, 0.3);
 
 .recharts-responsive-container {
   margin-top: auto;
-}`
-const Legend = styled.div`
+}`;
+
+const Header = styled.div`
 display: flex;
   h2 {
     font-size:1rem;
@@ -155,7 +153,7 @@ display: flex;
 			}
 		}
   }
-`
+`;
 const TooltipContainer = styled.div`
   background: #E60000;
   color: white;

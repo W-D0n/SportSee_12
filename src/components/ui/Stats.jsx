@@ -1,58 +1,54 @@
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
 
 
 
-const Stats = () => {
-
-  const data = [
+const Stats = ({ content }) => {
+  const perf = [
     {
-      "subject": "Math",
-      "A": 120,
-      "B": 110,
-      "fullMark": 150
+      value: 200,
+      kind: 1
     },
     {
-      "subject": "Chinese",
-      "A": 98,
-      "B": 130,
-      "fullMark": 150
+      value: 240,
+      kind: 2
     },
     {
-      "subject": "English",
-      "A": 86,
-      "B": 130,
-      "fullMark": 150
+      value: 80,
+      kind: 3
     },
     {
-      "subject": "Geography",
-      "A": 99,
-      "B": 100,
-      "fullMark": 150
+      value: 80,
+      kind: 4
     },
     {
-      "subject": "Physics",
-      "A": 85,
-      "B": 90,
-      "fullMark": 150
+      value: 220,
+      kind: 5
     },
     {
-      "subject": "History",
-      "A": 65,
-      "B": 85,
-      "fullMark": 150
+      value: 110,
+      kind: 6
     }
   ]
+
+  const french = {
+    cardio: 'Cardio',
+    energy: 'Energie',
+    endurance: 'Endurance',
+    strength: 'Force',
+    speed: 'Vitesse',
+    intensity: 'Intensité',
+  };
 
   return (
     <Section>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={90} width={730} height={250} data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey='subject' />
-          <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false} />
-          <Radar dataKey="A" stroke="#8884d8" fill="rgba(255, 1, 1, 0.7)" fillOpacity={0.6} />
+        <RadarChart outerRadius={90} data={perf}>
+          <PolarGrid radialLines={false} />
+          <PolarRadiusAxis tickCount={6} tick={false} axisLine={false} />
+          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFFFFF', fontSize: '12px' }} />
+          <Radar dataKey="value" stroke="false" fill="rgba(255, 1, 1, 0.7)" />
         </RadarChart>
       </ResponsiveContainer>
     </Section>
@@ -60,6 +56,14 @@ const Stats = () => {
 }
 export default Stats;
 
+const Section = styled.div`
+width: 258px;
+height: 263px;
+margin: 0 auto;
+border-radius: 5px;
+background-color: #282D30;
+`;
+
 Stats.propTypes = {
-}
-const Section = styled.section``
+  content: propTypes.array
+};

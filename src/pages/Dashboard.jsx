@@ -35,14 +35,51 @@ export const Dashboard = () => {
       carbohydrateCount: 150,
       lipidCount: 120
     }
-  }
+  };
+  const trackingSessions = [
+    {
+      day: '2020-07-01',
+      kilogram: 70,
+      calories: 240
+    },
+    {
+      day: '2020-07-02',
+      kilogram: 69,
+      calories: 220
+    },
+    {
+      day: '2020-07-03',
+      kilogram: 70,
+      calories: 280
+    },
+    {
+      day: '2020-07-04',
+      kilogram: 70,
+      calories: 500
+    },
+    {
+      day: '2020-07-05',
+      kilogram: 69,
+      calories: 160
+    },
+    {
+      day: '2020-07-06',
+      kilogram: 69,
+      calories: 162
+    },
+    {
+      day: '2020-07-07',
+      kilogram: 69,
+      calories: 390
+    }
+  ];
 
   return (
     <Container>
       <Welcome {...user.userInfos} />
       <GraphContainer>
-        <Tracking />
-        <Performance score={user.todayScore} />
+        <Tracking content={trackingSessions} />
+        <Performance userScore={user.todayScore} />
         <Metrics {...user.keyData} />
       </GraphContainer>
     </Container>
@@ -52,9 +89,8 @@ export const Dashboard = () => {
 
 const Container = styled.div`
   display: grid;
-  width: 100%
-
+  width: 100%;
 `
 const GraphContainer = styled.div`
   display: grid;
-`
+`;

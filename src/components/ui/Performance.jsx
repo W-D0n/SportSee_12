@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import propTypes from 'prop-types';
 import Session from './Session';
 import Stats from './Stats';
 import Score from './Score';
@@ -32,44 +33,7 @@ const averageSessions = [
     day: 7,
     sessionLength: 50
   }
-]
-const trackingSessions = [
-  {
-    day: '2020-07-01',
-    kilogram: 70,
-    calories: 240
-  },
-  {
-    day: '2020-07-02',
-    kilogram: 69,
-    calories: 220
-  },
-  {
-    day: '2020-07-03',
-    kilogram: 70,
-    calories: 280
-  },
-  {
-    day: '2020-07-04',
-    kilogram: 70,
-    calories: 500
-  },
-  {
-    day: '2020-07-05',
-    kilogram: 69,
-    calories: 160
-  },
-  {
-    day: '2020-07-06',
-    kilogram: 69,
-    calories: 162
-  },
-  {
-    day: '2020-07-07',
-    kilogram: 69,
-    calories: 390
-  }
-]
+];
 const stats = [
   {
     userId: 18,
@@ -108,21 +72,26 @@ const stats = [
       }
     ]
   }
-]
+];
 
-const Performance = () => {
+const Performance = ({userScore}) => {
+
+  console.log('type Score :', typeof(score))
   return (
     <Section>
       <Session content={averageSessions} />
-      <Stats content={trackingSessions} />
-      <Score content={stats} />
+      <Stats content={stats} />
+      <Score userScore={userScore} />
     </Section>
   )
-}
+};
 export default Performance;
+
+Performance.propTypes = {
+  userScore: propTypes.number
+};
 
 const Section = styled.section`
 display: flex;
-background-color: lightgrey;
 gap: 2rem;
-`
+`;
