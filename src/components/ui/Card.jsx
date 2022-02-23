@@ -4,13 +4,11 @@ import propTypes from 'prop-types';
 const MetricsCard = ({ title, iconSrc, value, unit }) => {
 
   return (
-    <>
-      <Div>
-        <h1>{title}</h1>
-        <img src={iconSrc} alt='icon'></img>
-        <p>{value}{unit}</p>
-      </Div>
-    </>
+    <Container>
+      <h1>{title}</h1>
+      <img src={iconSrc} alt='icon'></img>
+      <p>{value}{unit}</p>
+    </Container>
   )
 }
 MetricsCard.propTypes = {
@@ -22,5 +20,6 @@ MetricsCard.propTypes = {
 
 export default MetricsCard;
 
-const Div = styled.div`
+const Container = styled.div`
+
 `

@@ -1,11 +1,10 @@
 import propTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Welcome = () => {
-  let name = 'Paul';
+const Welcome = ({ firstName }) => {
   return (
     <Container>
-      <Head>Bonjour <UserName>{name}</UserName></Head>
+      <Head>Bonjour <UserName>{firstName}</UserName></Head>
       <Message>{`Félicitation ! Vous avez explosé vos objectifs hier 👏`}</Message>
     </Container>
   );
@@ -14,7 +13,7 @@ const Welcome = () => {
 export default Welcome;
 
 Welcome.propTypes = {
-  name: propTypes.string
+  firstName: propTypes.string.isRequired
 };
 
 const Container = styled.div`

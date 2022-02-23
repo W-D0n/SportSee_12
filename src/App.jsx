@@ -26,11 +26,12 @@ function App() {
 export default App;
 
 const Container = styled.div`
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    height: 100%
-  `
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+	height: 100%;
+`
 const Content = styled.div`
-    display: flex;
-    flex-direction: row;
-  `
+display: flex;
+align-items: stretch;
+height: 100%;
+`

@@ -2,7 +2,7 @@ export const USER_MAIN_DATA = [
   {
     id: 12,
     userInfos: {
-      firstName: 'Karl',
+      firstName: '12 MOCKÉ',
       lastName: 'Dovineau',
       age: 31,
     },
@@ -17,11 +17,11 @@ export const USER_MAIN_DATA = [
   {
     id: 18,
     userInfos: {
-      firstName: 'Cecilia',
+      firstName: '18 MOCKÉ',
       lastName: 'Ratorez',
       age: 34,
     },
-    todayScore: 0.3,
+    todayScore: 0.60,
     keyData: {
       calorieCount: 2500,
       proteinCount: 90,
@@ -77,8 +77,8 @@ export const USER_ACTIVITY = [
     sessions: [
       {
         day: '2020-07-01',
-        kilogram: 70,
-        calories: 240
+        kilogram: 20,
+        calories: 340
       },
       {
         day: '2020-07-02',
@@ -261,10 +261,3 @@ export const USER_PERFORMANCE = [
     ]
   }
 ]
-
-// export default {
-//   USER_MAIN_DATA,
-//   USER_ACTIVITY,
-//   USER_AVERAGE_SESSIONS,
-//   USER_PERFORMANCE
-// }

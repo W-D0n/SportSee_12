@@ -4,50 +4,25 @@ import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Responsi
 
 
 
-const Stats = ({ content }) => {
-  const perf = [
-    {
-      value: 200,
-      kind: 1
-    },
-    {
-      value: 240,
-      kind: 2
-    },
-    {
-      value: 80,
-      kind: 3
-    },
-    {
-      value: 80,
-      kind: 4
-    },
-    {
-      value: 220,
-      kind: 5
-    },
-    {
-      value: 110,
-      kind: 6
-    }
-  ]
+const Stats = ({ data }) => {
 
   const french = {
-    cardio: 'Cardio',
-    energy: 'Energie',
-    endurance: 'Endurance',
-    strength: 'Force',
-    speed: 'Vitesse',
-    intensity: 'Intensité',
+    1: 'Cardio',
+    2: 'Energie',
+    3: 'Endurance',
+    4: 'Force',
+    5: 'Vitesse',
+    6: 'Intensité',
   };
+  const translate = (item) => french[item];
 
   return (
     <Section>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={90} data={perf}>
+        <RadarChart startAngle={210} endAngle={570} outerRadius={80} data={data} strokeWidth={1.5} >
           <PolarGrid radialLines={false} />
           <PolarRadiusAxis tickCount={6} tick={false} axisLine={false} />
-          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFFFFF', fontSize: '12px' }} />
+          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFFFFF', fontSize: '12px' }} tickFormatter={translate} />
           <Radar dataKey="value" stroke="false" fill="rgba(255, 1, 1, 0.7)" />
         </RadarChart>
       </ResponsiveContainer>
@@ -65,5 +40,6 @@ background-color: #282D30;
 `;
 
 Stats.propTypes = {
-  content: propTypes.array
+  kind: propTypes.object,
+  data: propTypes.array
 };

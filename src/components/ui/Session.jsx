@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 
-const Session = ({ content }) => {
+const Session = ({ sessions }) => {
   const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
   const formatDay = (item) => daysWeek[item];
 
@@ -13,7 +13,7 @@ const Session = ({ content }) => {
         <h2>Durée moyenne des sessions</h2>
       </Header>
       <ResponsiveContainer width='100%' height='100%' >
-        <LineChart data={content} margin={{ top: 5, right: 10, left: 10, bottom: 0 }}>
+        <LineChart data={sessions} margin={{ top: 5, right: 10, left: 10, bottom: 0 }}>
           <XAxis
             dataKey='day'
             axisLine={false}
@@ -26,8 +26,8 @@ const Session = ({ content }) => {
             fontWeight={600}
           />
           <YAxis hide domain={['dataMin-10', 'dataMax+20']} />
-          <Tooltip content={<CustomTooltip />} cursor={false} />
-          <Line type='natural' dataKey='sessionLength' stroke='rgba(255, 255, 255, 0.8)' strokeWidth={2} activeDot={{ background: '#FFFFFF', stroke: 'rgba(255, 255, 255, 0.198345)', strokeWidth: 10, r: 4 }} dot={{ r: 0 }} />
+          <Tooltip content={<CustomTooltip />} cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 40 }} />
+          <Line type='monotone' dataKey='sessionLength' stroke='rgba(255, 255, 255, 0.6)' strokeWidth={2} activeDot={{ background: '#FFFFFF', stroke: 'rgba(255, 255, 255, 0.198345)', strokeWidth: 10, r: 4 }} dot={{ r: 0 }} />
         </LineChart>
       </ResponsiveContainer>
     </Section>
@@ -83,7 +83,7 @@ const Header = styled.div`
 `;
 
 Session.propTypes = {
-  content: propTypes.array
+  sessions: propTypes.array.isRequired
 };
 CustomTooltip.propTypes = {
   active: propTypes.bool,

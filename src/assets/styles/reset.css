@@ -12,7 +12,6 @@
 }
 html,
 body {
-	height: 100%;
 	font-size: 16px;
 }
 body {
@@ -59,13 +58,4 @@ li {
 ul {
 	margin: 0;
 	padding: 0;
-}
-
-#root,
-#__next {
-	isolation: isolate;
-}
-
-#root {
-	height: 100%;
 }

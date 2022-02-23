@@ -2,46 +2,7 @@ import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 
-
-const Tracking = () => {
-  const data = [
-    {
-      day: '2020-07-01',
-      kilogram: 70,
-      calories: 240
-    },
-    {
-      day: '2020-07-02',
-      kilogram: 69,
-      calories: 220
-    },
-    {
-      day: '2020-07-03',
-      kilogram: 70,
-      calories: 280
-    },
-    {
-      day: '2020-07-04',
-      kilogram: 70,
-      calories: 500
-    },
-    {
-      day: '2020-07-05',
-      kilogram: 69,
-      calories: 160
-    },
-    {
-      day: '2020-07-06',
-      kilogram: 69,
-      calories: 162
-    },
-    {
-      day: '2020-07-07',
-      kilogram: 80,
-      calories: 390
-    }
-  ]
-
+const Tracking = ({ activities }) => {
   return (
     <Section>
       <Header>
@@ -52,9 +13,9 @@ const Tracking = () => {
         </ul>
       </Header>
       <ResponsiveContainer width='100%' height='100%'>
-        <BarChart data={data} width={500} height={300} barGap={8} >
+        <BarChart data={activities} width={500} height={300} barGap={8} >
           <CartesianGrid strokeDasharray='2' vertical={false} />
-          <XAxis dataKey='day' stroke='#DEDEDE' tick={{ fill: '#9B9EAC' }} tickLine={false} tickFormatter={(day) => new Date(day).getDate()} />
+          <XAxis dataKey='day' stroke='#DEDEDE' strokeWidth={2} tick={{ fill: '#9B9EAC' }} tickLine={false} tickFormatter={(day) => new Date(day).getDate()} />
           <YAxis
             yAxisId='kilogram'
             orientation='right'
@@ -71,7 +32,6 @@ const Tracking = () => {
             orientation='right'
             domain={[0, 'dataMax+5']}
           />
-
           <Tooltip content={<CustomTooltip />} />
           <Bar yAxisId='kilogram' dataKey='kilogram' fill='#282D30' barSize={10} radius={[5, 5, 0, 0]} />
           <Bar yAxisId='calories' dataKey='calories' fill='#E60000' barSize={10} radius={[5, 5, 0, 0]} />
@@ -96,7 +56,9 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-
+Tracking.propTypes = {
+  activities: propTypes.array.isRequired
+};
 CustomTooltip.propTypes = {
   active: propTypes.bool,
   payload: propTypes.array
@@ -113,8 +75,8 @@ padding: 1.5rem;
 
 .recharts-responsive-container {
   margin-top: auto;
-}`;
-
+}
+`;
 const Header = styled.div`
 display: flex;
   h2 {
@@ -164,5 +126,8 @@ const TooltipContainer = styled.div`
 
   div:first-child {
     margin-bottom: 15px;
+  }
+  .recharts-layer.recharts-bar-rectangle .recharts-rectangle:hover {
+    fill: red;
   }
 `;

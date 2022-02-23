@@ -10,7 +10,6 @@ function Routing() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="home" element={<Home />} />
-      {/* <Route path="user/:id" element={<Dashboard />}> */}
       <Route path="user" element={<Dashboard />}>
         <Route path=":id" element={<Dashboard />} />
       </Route>

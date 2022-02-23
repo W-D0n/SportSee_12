@@ -1,96 +1,76 @@
-// import { useParams } from 'react-router-dom';
-// import { useState, useEffect } from 'react';
+/**
+ * 
+ */
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-// import { USER_PERFORMANCE, USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_MAIN_DATA } from '../assets/data/mock'; //Import des data provisoire
-import { Welcome, Tracking, Metrics, Performance } from './../components/ui';
 
+import UserService from '../services/UserService';
+import { Welcome, Tracking, Metrics, Session, Stats, Score } from './../components/ui';
+
+import Loading from './Loading'
+import Error404 from './Error404'
 
 export const Dashboard = () => {
-  //  IL FAUT METTRE ICI LA RECUP DES DATA POUR LES GRAPHS
-  //  POUR LES DISPATCHER ENSUITE DANS LES COMPONENTS.
+  let { id } = useParams();
+  const currentUserID = Number(id);
 
+  const [user, setUser] = useState({})
+  const [activities, setActivities] = useState(null)
+  const [sessions, setSessions] = useState(null)
+  const [perf, setPerf] = useState(null)
 
-  // let { id } = useParams();
-  // let { data, setData } = useState({});
-
-  // data = {
-  //   user: USER_MAIN_DATA,
-  //   activity: USER_ACTIVITY,
-  //   sessions: USER_AVERAGE_SESSIONS,
-  //   performance: USER_PERFORMANCE
-  // }
-
-  // useEffect(() => { }, [data]);
-  const user = {
-    id: 18,
-    userInfos: {
-      firstName: 'Cecilia',
-      lastName: 'Ratorez',
-      age: 34,
-    },
-    todayScore: 0.3,
-    keyData: {
-      calorieCount: 2500,
-      proteinCount: 90,
-      carbohydrateCount: 150,
-      lipidCount: 120
+  useEffect(() => {
+    UserService.get(currentUserID).then(res => {
+      setUser(res);
+    })
+    UserService.getActivities(currentUserID).then(res => {
+      setActivities(res);
+    })
+    UserService.getSessions(currentUserID).then(res => {
+      setSessions(res);
+    })
+    UserService.getPerf(currentUserID).then(res => {
+      setPerf(res);
+    })
+  }, []);
+  if (user) {
+    if (user.todayScore && user.userInfos && user.keyData && activities && sessions && perf) {
+      return (
+        <>
+          <Container>
+            <Welcome firstName={user.userInfos.firstName} />
+            <GraphContainer>
+              <Tracking activities={activities} />
+              <Metrics metrics={user.keyData} />
+              <Performance>
+                <Session sessions={sessions} />
+                <Stats {...perf} />
+                <Score userScore={user.todayScore} />
+              </Performance>
+            </GraphContainer>
+          </Container>
+        </>
+      )
     }
-  };
-  const trackingSessions = [
-    {
-      day: '2020-07-01',
-      kilogram: 70,
-      calories: 240
-    },
-    {
-      day: '2020-07-02',
-      kilogram: 69,
-      calories: 220
-    },
-    {
-      day: '2020-07-03',
-      kilogram: 70,
-      calories: 280
-    },
-    {
-      day: '2020-07-04',
-      kilogram: 70,
-      calories: 500
-    },
-    {
-      day: '2020-07-05',
-      kilogram: 69,
-      calories: 160
-    },
-    {
-      day: '2020-07-06',
-      kilogram: 69,
-      calories: 162
-    },
-    {
-      day: '2020-07-07',
-      kilogram: 69,
-      calories: 390
-    }
-  ];
-
-  return (
-    <Container>
-      <Welcome {...user.userInfos} />
-      <GraphContainer>
-        <Tracking content={trackingSessions} />
-        <Performance userScore={user.todayScore} />
-        <Metrics {...user.keyData} />
-      </GraphContainer>
-    </Container>
-  )
+    return <Loading />;
+  }
+  return <Error404 />;
 };
 
 
 const Container = styled.div`
-  display: grid;
-  width: 100%;
-`
+  display: flex;
+  flex-direction: column;
+  margin-inline: 5rem;
+`;
 const GraphContainer = styled.div`
   display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+`;
+const Performance = styled.section`
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
 `;

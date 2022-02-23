@@ -5,9 +5,9 @@ import LogoImg from '../../assets/img/logo.svg';
 const Header = () => {
   const menuArray = [
     { title: 'Accueil', path: '/home' },
-    { title: 'Profil', path: '/profil' },
-    { title: 'Réglage', path: '/settings' },
-    { title: 'Communauté', path: '/comunity' }
+    { title: 'Profil', path: '/#' },
+    { title: 'Réglage', path: '/#' },
+    { title: 'Communauté', path: '/#' }
   ]
   return (
     <Container className='Header'>
