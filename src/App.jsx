@@ -6,7 +6,10 @@ import Header from './components/layout/Header';
 import Sidebar from './components/layout/Sidebar';
 import Routing from './services/Routing';
 
-// si on est sur la page 404 je ne veux pas render les components Header ni Sidebar
+/**
+ * App start here with routing and layout components
+ * @returns {reactElement}
+ */
 function App() {
   return (
     <Router>

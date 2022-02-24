@@ -1,9 +1,16 @@
-/**
- * @description The BarChart of user's day by day tracking
- */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Rectangle, CartesianGrid, ResponsiveContainer } from 'recharts';
+
+/**
+ * The BarChart of user's day by day tracking
+ * @component
+ * @param {Object} activities props of activities
+ * @property {String} activities.day date
+ * @property {!Number} activities.kilogram  weight
+ * @property {!Number} activities.calories  calories burned
+ * @returns {reactElement} 
+ */
 
 const Tracking = ({ activities }) => {
   return (

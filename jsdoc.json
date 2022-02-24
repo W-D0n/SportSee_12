@@ -1,18 +1,21 @@
 {
-  "plugins": ["plugins/markdown"],
   "source": {
     "include": ["src"], 
     "includePattern": "\\.(jsx|js|ts|tsx)$",
     "excludePattern": "(node_modules/|docs)"
   },
+  "plugins": ["plugins/markdown", "better-docs/component"],
   "templates": {
     "cleverLinks": true,
-    "monospaceLinks": true
+    "monospaceLinks": true,
+    "better-docs": {
+      "name": "My React components"
+    }
   },
   "opts": {                      
     "destination": "./doc/",          
     "recurse": true,
     "encoding": "utf8",
-    "readme":"./README.md"
+    "readme":"./readme.md"
   }
 }

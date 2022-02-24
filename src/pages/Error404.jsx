@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logoImg from './../assets/img/logoOnly.svg';
 
-
+/**
+ * Error component
+ * @component
+ * 
+ * @returns {reactElement}
+ */
 const Error404 = () => {
   return (
     <Container>

@@ -1,10 +1,13 @@
-/**
- * Links are implemented but there is no route yet.
- */
-
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoImg from '../../assets/img/logo.svg';
+
+/**
+ * Links are implemented but there is no route yet.
+ * @component
+ * 
+ * @returns {reactElement} *  
+ */
 
 const Header = () => {
   const menuArray = [
@@ -39,10 +42,10 @@ const Container = styled.div`
   Height: 91px;
   background-color:#000000;
   box-shadow: 0px 4px 4px 0px #000000;
-`
+`;
 const Logo = styled.img`
   margin-inline: 2rem;
-`
+`;
 const Menu = styled.ul`
   width: 100%;
   color: white;
@@ -51,4 +54,4 @@ const Menu = styled.ul`
   font-weight: 500;
   font-size: 24px;
   line-height: 24px;
-`
+`;

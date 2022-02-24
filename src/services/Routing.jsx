@@ -5,6 +5,9 @@ import { Home } from '../pages/Home';
 import { Dashboard } from '../pages/Dashboard';
 import Error404 from '../pages/Error404';
 
+/**
+ * Routing logic
+ */
 function Routing() {
   return (
     <Routes>

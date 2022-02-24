@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/ui/Card.jsx</title>
+    <title>JSDoc: Source: App.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/ui/Card.jsx</h1>
+    <h1 class="page-title">Source: App.jsx</h1>
 
     
 
@@ -26,39 +26,54 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import propTypes from 'prop-types';
+            <pre class="prettyprint source linenums"><code>import { BrowserRouter as Router } from 'react-router-dom';
+import styled from 'styled-components';
+import './assets/styles/reset.css';
 
+import Header from './components/layout/Header';
+import Sidebar from './components/layout/Sidebar';
+import Routing from './services/Routing';
 
 /**
- * Card which display user keydata
- * @component
- * 
- * @param {String} title label of element
- * @param {String} iconSrc icon's path
- * @param {Number} value how much do you eat ?
- * @param {String} unit kg or kcal
+ * App start here with routing and layout components
  * @returns {reactElement}
- *  
  */
-
-const Card = ({ title, iconSrc, value, unit }) => {
-
+function App() {
   return (
-    &lt;>
-      &lt;h1>{title}&lt;/h1>
-      &lt;img src={iconSrc} alt='icon'>&lt;/img>
-      &lt;p>{value}{unit}&lt;/p>
-    &lt;/>
-  )
-}
-Card.propTypes = {
-  title: propTypes.string,
-  iconSrc: propTypes.string,
-  value: propTypes.number,
-  unit: propTypes.string
-};
+    &lt;Router>
+      &lt;Container>
+        &lt;Header />
+        &lt;Sidebar />
+        &lt;Content>
+          &lt;Routing />
+        &lt;/Content>
+      &lt;/Container>
+    &lt;/Router>
 
-export default Card;</code></pre>
+  );
+}
+
+export default App;
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 6rem 1fr;
+  grid-template-areas:
+    "hd hd hd hd hd hd hd hd hd hd hd"
+    "nav main main main main main main main main main main";
+  font-family: Roboto;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+`
+
+const Content = styled.div`
+grid-area: main;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+`</code></pre>
         </article>
     </section>
 

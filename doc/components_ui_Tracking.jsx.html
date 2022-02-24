@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/ui/Tracking.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/ui/Tracking.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import styled from 'styled-components';
+import propTypes from 'prop-types';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Rectangle, CartesianGrid, ResponsiveContainer } from 'recharts';
+
+/**
+ * The BarChart of user's day by day tracking
+ * @component
+ * @param {Object} activities props of activities
+ * @property {String} activities.day date
+ * @property {!Number} activities.kilogram  weight
+ * @property {!Number} activities.calories  calories burned
+ * @returns {reactElement} 
+ */
+
+const Tracking = ({ activities }) => {
+  return (
+    &lt;Section>
+      &lt;Header>
+        &lt;h2>Activité quotidienne&lt;/h2>
+        &lt;ul>
+          &lt;li>Poids (kg)&lt;/li>
+          &lt;li>Calories brûlées (kCal)&lt;/li>
+        &lt;/ul>
+      &lt;/Header>
+      &lt;ResponsiveContainer width='100%' height='100%'>
+        &lt;BarChart data={activities} width={500} height={300} barGap={8} >
+          &lt;CartesianGrid strokeDasharray='2' vertical={false} />
+          &lt;XAxis dataKey='day' stroke='#DEDEDE' strokeWidth={2} tick={{ fill: '#9B9EAC' }} tickLine={false} tickFormatter={(day) => new Date(day).getDate()} />
+          &lt;YAxis
+            yAxisId='kilogram'
+            orientation='right'
+            tickMargin={40}
+            tickLine={false}
+            axisLine={false}
+            domain={['dataMin-5', 'dataMax+10']}
+            interval={'preserveEnd'}
+            tickCount={4}
+          />
+          &lt;YAxis
+            hide
+            yAxisId='calories'
+            orientation='right'
+            domain={[0, 'dataMax+5']}
+          />
+          &lt;Tooltip content={&lt;CustomTooltip />} isAnimationActive={true} cursor={&lt;CustomCursor />} />
+          &lt;Bar yAxisId='kilogram' dataKey='kilogram' fill='#282D30' barSize={10} radius={[5, 5, 0, 0]} />
+          &lt;Bar yAxisId='calories' dataKey='calories' fill='#E60000' barSize={10} radius={[5, 5, 0, 0]} />
+        &lt;/BarChart>
+      &lt;/ResponsiveContainer>
+    &lt;/Section>
+  );
+};
+
+export default Tracking;
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active &amp;&amp; payload &amp;&amp; payload.length) {
+    return (
+      &lt;TooltipContainer>
+        &lt;div>{`${payload[0].value}`}kg&lt;/div>
+        &lt;div>{`${payload[1].value}`}kCal&lt;/div>
+      &lt;/TooltipContainer>
+    );
+  }
+
+  return null;
+};
+
+const CustomCursor = ({ x, y, width, height }) => {
+  return (
+    &lt;Rectangle
+      opacity={0.1}
+      x={x + 4}
+      y={y}
+      width={width - 10}
+      height={height}
+    />
+  )
+}
+Tracking.propTypes = {
+  activities: propTypes.array.isRequired
+};
+CustomTooltip.propTypes = {
+  active: propTypes.bool,
+  payload: propTypes.array
+};
+CustomCursor.propTypes = {
+  x: propTypes.number,
+  y: propTypes.number,
+  width: propTypes.number,
+  height: propTypes.number
+};
+const Section = styled.section`
+grid-area: track;
+grid-column:1/4;
+height: 320px;
+width: 100%;
+background: #FBFBFB;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+padding: 1.5rem;
+
+.recharts-responsive-container {
+  margin-top: auto;
+}
+`;
+const Header = styled.div`
+display: flex;
+  h2 {
+    font-size:1rem;
+    color:#20253A;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 1rem;
+    
+    li {
+      display: flex;
+      align-items: center;
+      color: #74798C;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    li:before {
+			display: block;
+			content: '';
+			width: 0.5rem;
+			height: 0.5rem;
+      margin-right: 0.5rem;
+			border-radius: 0.25rem;
+		}
+		li:first-child {
+			&amp;:before {
+				background-color: black;
+			}
+		}
+		li:last-child {
+			&amp;:before {
+				background-color: red;
+			}
+		}
+  }
+`;
+const TooltipContainer = styled.div`
+  background: #E60000;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 15px 10px;
+  box-shadow: -8px 5px 8px -2px rgba(0, 0, 0, 0.3);
+
+  div:first-child {
+    margin-bottom: 15px;
+  }
+  .recharts-layer.recharts-bar-rectangle .recharts-rectangle:hover {
+    fill: red;
+  }
+`;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Card.html">Card</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="Header.html">Header</a></li><li><a href="Home.html">Home</a></li><li><a href="Loading.html">Loading</a></li><li><a href="Metrics.html">Metrics</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="Tracking.html">Tracking</a></li><li><a href="Welcome.html">Welcome</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BASE_URL">BASE_URL</a></li><li><a href="global.html#ENV">ENV</a></li><li><a href="global.html#UserService">UserService</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Feb 25 2022 02:59:21 GMT+0400 (heure du Golfe)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

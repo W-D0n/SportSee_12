@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/ui/Card.jsx</title>
+    <title>JSDoc: Source: pages/Home.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/ui/Card.jsx</h1>
+    <h1 class="page-title">Source: pages/Home.jsx</h1>
 
     
 
@@ -26,39 +26,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import propTypes from 'prop-types';
-
+            <pre class="prettyprint source linenums"><code>import { Link } from 'react-router-dom';
+import styled from "styled-components";
 
 /**
- * Card which display user keydata
+ * App start here with routing and layout components
  * @component
- * 
- * @param {String} title label of element
- * @param {String} iconSrc icon's path
- * @param {Number} value how much do you eat ?
- * @param {String} unit kg or kcal
- * @returns {reactElement}
- *  
  */
-
-const Card = ({ title, iconSrc, value, unit }) => {
-
+export const Home = () => {
   return (
-    &lt;>
-      &lt;h1>{title}&lt;/h1>
-      &lt;img src={iconSrc} alt='icon'>&lt;/img>
-      &lt;p>{value}{unit}&lt;/p>
-    &lt;/>
-  )
-}
-Card.propTypes = {
-  title: propTypes.string,
-  iconSrc: propTypes.string,
-  value: propTypes.number,
-  unit: propTypes.string
-};
+    &lt;Container>
+      &lt;h1>Home&lt;/h1>
+      &lt;Link to={`/user/${12}`}>
+        &lt;h3>User 12&lt;/h3>
+      &lt;/Link>
+      &lt;Link to={`/user/${18}`}>
+        &lt;h3>User 18&lt;/h3>
+      &lt;/Link>
+    &lt;/Container>
 
-export default Card;</code></pre>
+  );
+}
+
+const Container = styled.div`
+  margin-inline: 7rem;
+  margin-block: 4rem;
+  `</code></pre>
         </article>
     </section>
 

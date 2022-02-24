@@ -7,17 +7,18 @@ import { Welcome, Tracking, Metrics, Session, Stats, Score, Loader } from './../
 import Error404 from './Error404'
 
 /**
- * Function : create a react component for user profil.
+ * Function that create the Dashboard component for user profil.
  * @component
- * @returns {reactElement} 
+ * 
+ * @returns {reactElement}
  */
-export const Dashboard = () => {
-  /**
-   * 
-   */
-  let { id } = useParams();
-  const currentUserID = Number(id);
 
+export const Dashboard = () => {
+  // Get current id from url
+  let { id } = useParams();
+  // Muting type from string into number on id
+  const currentUserID = Number(id);
+  // Fetch data
   const [user, setUser] = useState({})
   const [activities, setActivities] = useState(null)
   const [sessions, setSessions] = useState(null)
@@ -25,7 +26,6 @@ export const Dashboard = () => {
 
   useEffect(() => {
     UserService.get(currentUserID).then(res => {
-      console.log('response.status: ', res.status);
       setUser(res);
     })
     UserService.getActivities(currentUserID).then(res => {
@@ -38,8 +38,6 @@ export const Dashboard = () => {
       setPerf(res);
     })
   }, []);
-
-
 
   if (user) {
     if (user.todayScore && user.userInfos && user.keyData && activities && sessions && perf) {

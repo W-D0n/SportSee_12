@@ -1,9 +1,11 @@
-// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
+/**
+ * App start here with routing and layout components
+ * @component
+ */
 export const Home = () => {
-
   return (
     <Container>
       <h1>Home</h1>

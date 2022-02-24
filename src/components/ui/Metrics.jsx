@@ -7,9 +7,12 @@ import Lipides from '../../assets/img/fat-icon.svg';
 
 /**
  * Here are populate some metrics of user into cards
+ * @component
  * @param {Object} metrics props
- * @param {Object} metrics props
- * @param {Object} metrics props
+ * @property {!Number} metrics.calorieCount  number of calorie
+ * @property {!Number} metrics.proteinCount  number of protein
+ * @property {!Number} metrics.carbohydrateCount  number of carbohydrate
+ * @property {!Number} metrics.lipidCount  number of lipid
  * @returns {reactElement}
  *  
  */

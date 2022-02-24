@@ -1,12 +1,13 @@
-/**
- * @description Here we're fetching or importing local(mock) data. It depends on ./Global config
- * @param url specify which path will be choose to fetch data with API
- * @param mockObj specify which path will be choose to get mocked data
- * @param userId
- * @returns Promise
- */
 import { BASE_URL, ENV } from "./Global";
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../assets/data/mock';
+
+/**
+ * Here we're fetching or importing local(mock) data. It depends on ./Global config
+ * @param url specify which path will be choose to fetch data with API
+ * @param mockObj specify which path will be choose to get mocked data
+ * @param userId id passed by current user
+ * @returns {Promise}
+ */
 
 const AjaxService = {
   get: (url, mockObj, userId) => {

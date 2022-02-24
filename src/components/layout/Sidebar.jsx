@@ -8,7 +8,9 @@ import MuscleIcon from '../../assets/img/muscle-icon.svg';
 
 /**
  * Sidebar
- * @returns {reactElement}
+ * @component
+ * 
+ * @returns {reactElement}  
  */
 const Sidebar = () => {
   const sideArray = [

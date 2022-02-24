@@ -1,9 +1,12 @@
-/**
- * @description Using AjaxService to receive data for each need.
- * @param userId String
- * @returns Promise
- */
 import AjaxService from './AjaxService';
+
+/**
+ * Function that receive data
+ * 
+ * @category Service
+ * @param {String|!Number} userId 
+ * @returns {Promise}
+ */
 
 const UserService = {
   get: (userId) => {

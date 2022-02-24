@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/ui/Card.jsx</title>
+    <title>JSDoc: Source: components/layout/Header.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/ui/Card.jsx</h1>
+    <h1 class="page-title">Source: components/layout/Header.jsx</h1>
 
     
 
@@ -26,39 +26,64 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import propTypes from 'prop-types';
-
+            <pre class="prettyprint source linenums"><code>import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import LogoImg from '../../assets/img/logo.svg';
 
 /**
- * Card which display user keydata
+ * Links are implemented but there is no route yet.
  * @component
  * 
- * @param {String} title label of element
- * @param {String} iconSrc icon's path
- * @param {Number} value how much do you eat ?
- * @param {String} unit kg or kcal
- * @returns {reactElement}
- *  
+ * @returns {reactElement} *  
  */
 
-const Card = ({ title, iconSrc, value, unit }) => {
-
+const Header = () => {
+  const menuArray = [
+    { title: 'Accueil', path: '/home' },
+    { title: 'Profil', path: '/#' },
+    { title: 'Réglage', path: '/#' },
+    { title: 'Communauté', path: '/error' }
+  ]
   return (
-    &lt;>
-      &lt;h1>{title}&lt;/h1>
-      &lt;img src={iconSrc} alt='icon'>&lt;/img>
-      &lt;p>{value}{unit}&lt;/p>
-    &lt;/>
+    &lt;Container className='Header'>
+      &lt;Logo src={LogoImg} alt='Sportsee logo' />
+      &lt;Menu>
+        {menuArray.map((e, i) => (
+          &lt;Link key={i} to={e.path}>
+            &lt;li>{e.title}&lt;/li>
+          &lt;/Link>
+        ))}
+      &lt;/Menu>
+    &lt;/Container>
   )
 }
-Card.propTypes = {
-  title: propTypes.string,
-  iconSrc: propTypes.string,
-  value: propTypes.number,
-  unit: propTypes.string
-};
 
-export default Card;</code></pre>
+export default Header;
+
+const Container = styled.div`
+  z-index: 1;
+  grid-area: hd;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  Height: 91px;
+  background-color:#000000;
+  box-shadow: 0px 4px 4px 0px #000000;
+`;
+const Logo = styled.img`
+  margin-inline: 2rem;
+`;
+const Menu = styled.ul`
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+`;
+</code></pre>
         </article>
     </section>
 

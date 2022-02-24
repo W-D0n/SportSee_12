@@ -7,13 +7,13 @@ import propTypes from 'prop-types';
  * 
  * @param {String} title label of element
  * @param {String} iconSrc icon's path
- * @param {Number} value 
+ * @param {Number} value how much do you eat ?
  * @param {String} unit kg or kcal
  * @returns {reactElement}
  *  
  */
 
-const MetricsCard = ({ title, iconSrc, value, unit }) => {
+const Card = ({ title, iconSrc, value, unit }) => {
 
   return (
     <>
@@ -23,11 +23,11 @@ const MetricsCard = ({ title, iconSrc, value, unit }) => {
     </>
   )
 }
-MetricsCard.propTypes = {
+Card.propTypes = {
   title: propTypes.string,
   iconSrc: propTypes.string,
   value: propTypes.number,
   unit: propTypes.string
 };
 
-export default MetricsCard;
+export default Card;

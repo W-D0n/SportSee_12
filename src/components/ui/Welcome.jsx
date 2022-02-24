@@ -1,6 +1,12 @@
 import propTypes from 'prop-types';
 import styled from 'styled-components';
 
+/**
+ * Function that create the Dashboard component for user profil.
+ * @component
+ * @param {String} firstName 
+ * @returns {reactElement} 
+ */
 const Welcome = ({ firstName }) => {
   return (
     <Container>
