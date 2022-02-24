@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
+/**
+ * @fileoverview test
+ */
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

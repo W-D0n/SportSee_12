@@ -1,7 +1,12 @@
+import styled from 'styled-components';
+
 /**
  * Loader component with a svg
+ * @component
+ *
+ * @returns {reactElement}
+ *  
  */
-import styled from 'styled-components';
 
 const Loading = () => {
   return (

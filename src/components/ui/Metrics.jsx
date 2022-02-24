@@ -1,6 +1,3 @@
-/**
- * @description Here are populate some metrics of user into cards
- */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import Calories from '../../assets/img/calories-icon.svg';
@@ -8,6 +5,14 @@ import Proteines from '../../assets/img/protein-icon.svg';
 import Glucides from '../../assets/img/carbs-icon.svg';
 import Lipides from '../../assets/img/fat-icon.svg';
 
+/**
+ * Here are populate some metrics of user into cards
+ * @param {Object} metrics props
+ * @param {Object} metrics props
+ * @param {Object} metrics props
+ * @returns {reactElement}
+ *  
+ */
 
 const Metrics = ({ metrics }) => {
 

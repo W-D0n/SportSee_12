@@ -1,16 +1,20 @@
-/**
- * @description this page was made for user profil.
- */
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import UserService from '../services/UserService';
 import { Welcome, Tracking, Metrics, Session, Stats, Score, Loader } from './../components/ui';
-
 import Error404 from './Error404'
 
+/**
+ * Function : create a react component for user profil.
+ * @component
+ * @returns {reactElement} 
+ */
 export const Dashboard = () => {
+  /**
+   * 
+   */
   let { id } = useParams();
   const currentUserID = Number(id);
 
