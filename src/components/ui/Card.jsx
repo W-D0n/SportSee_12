@@ -1,14 +1,24 @@
-import styled from 'styled-components';
 import propTypes from 'prop-types';
+/**
+ * Card which display user keydata
+ * @component
+ * 
+ * @param {String} title label of element
+ * @param {String} iconSrc icon's path
+ * @param {Number} value 
+ * @param {String} unit kg or kcal
+ * @returns {reactElement}
+ *  
+ */
 
 const MetricsCard = ({ title, iconSrc, value, unit }) => {
 
   return (
-    <Container>
+    <>
       <h1>{title}</h1>
       <img src={iconSrc} alt='icon'></img>
       <p>{value}{unit}</p>
-    </Container>
+    </>
   )
 }
 MetricsCard.propTypes = {
@@ -19,7 +29,3 @@ MetricsCard.propTypes = {
 };
 
 export default MetricsCard;
-
-const Container = styled.div`
-
-`

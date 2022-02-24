@@ -1,18 +1,29 @@
-import React from 'react';
+/**
+ * Loader component with a svg
+ */
 import styled from 'styled-components';
-import loaderImg from './../../assets/img/loader.svg';
 
-
-const Loader = () => {
+const Loading = () => {
   return (
     <Container>
-      <img src={loaderImg} className="load" alt="loading logo" />
+      <div className="loader__content">
+        <p>Veuillez patienter</p>
+      </div>
     </Container>
-  )
-}
+  );
+};
 
-export default Loader;
+export default Loading;
 
 const Container = styled.div`
-  width:100%;
+  width: 100%;
+  height: 100vh;
+
+  .loader__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+  }
 `

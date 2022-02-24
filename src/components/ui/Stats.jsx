@@ -1,3 +1,6 @@
+/**
+ * @description The RadarChart of user's stats
+ */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';

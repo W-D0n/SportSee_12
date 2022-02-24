@@ -1,5 +1,5 @@
 /**
- * 
+ * @description Here are populate some metrics of user into cards
  */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
@@ -40,11 +40,11 @@ Metrics.propTypes = {
   metrics: propTypes.object.isRequired
 };
 const Container = styled.div`
-  grid-row:span2 / auto;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns:1fr;
-  grid-template-rows: repeat(4 1fr);
+grid-area: metric;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  grid-column: 4;
 `
 const Card = styled.div`
   display: flex;

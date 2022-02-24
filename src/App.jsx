@@ -1,4 +1,3 @@
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import './assets/styles/reset.css';
@@ -13,8 +12,8 @@ function App() {
     <Router>
       <Container>
         <Header />
+        <Sidebar />
         <Content>
-          <Sidebar />
           <Routing />
         </Content>
       </Container>
@@ -26,12 +25,21 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-	height: 100%;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 6rem 1fr;
+  grid-template-areas:
+    "hd hd hd hd hd hd hd hd hd hd hd"
+    "nav main main main main main main main main main main";
+  font-family: Roboto;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
 `
+
 const Content = styled.div`
-display: flex;
-align-items: stretch;
-height: 100%;
+grid-area: main;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
 `

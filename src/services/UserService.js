@@ -1,5 +1,7 @@
 /**
- * 
+ * @description Using AjaxService to receive data for each need.
+ * @param userId String
+ * @returns Promise
  */
 import AjaxService from './AjaxService';
 

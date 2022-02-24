@@ -1,6 +1,9 @@
+/**
+ * @description The BarChart of user's day by day tracking
+ */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Rectangle, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 const Tracking = ({ activities }) => {
   return (
@@ -32,7 +35,7 @@ const Tracking = ({ activities }) => {
             orientation='right'
             domain={[0, 'dataMax+5']}
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip />} isAnimationActive={true} cursor={<CustomCursor />} />
           <Bar yAxisId='kilogram' dataKey='kilogram' fill='#282D30' barSize={10} radius={[5, 5, 0, 0]} />
           <Bar yAxisId='calories' dataKey='calories' fill='#E60000' barSize={10} radius={[5, 5, 0, 0]} />
         </BarChart>
@@ -56,6 +59,17 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+const CustomCursor = ({ x, y, width, height }) => {
+  return (
+    <Rectangle
+      opacity={0.1}
+      x={x + 4}
+      y={y}
+      width={width - 10}
+      height={height}
+    />
+  )
+}
 Tracking.propTypes = {
   activities: propTypes.array.isRequired
 };
@@ -63,8 +77,15 @@ CustomTooltip.propTypes = {
   active: propTypes.bool,
   payload: propTypes.array
 };
-
+CustomCursor.propTypes = {
+  x: propTypes.number,
+  y: propTypes.number,
+  width: propTypes.number,
+  height: propTypes.number
+};
 const Section = styled.section`
+grid-area: track;
+grid-column:1/4;
 height: 320px;
 width: 100%;
 background: #FBFBFB;

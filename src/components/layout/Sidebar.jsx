@@ -6,7 +6,10 @@ import SwimmingIcon from '../../assets/img/swim-icon.svg';
 import BikingIcon from '../../assets/img/bike-icon.svg';
 import MuscleIcon from '../../assets/img/muscle-icon.svg';
 
-
+/**
+ * Sidebar
+ * @returns {reactElement}
+ */
 const Sidebar = () => {
   const sideArray = [
     { title: 'MeditationIcon', path: '/#', src: MeditationIcon },
@@ -32,11 +35,15 @@ const Sidebar = () => {
 export default Sidebar;
 
 const Container = styled.div`
+grid-area: nav;
+position: fixed;
+top:0;
+bottom: 0;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap: 10rem;
+gap: 5rem;
 width: 117px;
 background-color:#000000;
 color: white;
@@ -60,5 +67,4 @@ font-weight: 500;
 line-height: 24px;
 letter-spacing: 0px;
 writing-mode: sideways-lr;
-margin-bottom: 4rem;
 `

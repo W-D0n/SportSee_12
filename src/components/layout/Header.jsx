@@ -1,3 +1,7 @@
+/**
+ * Links are implemented but there is no route yet.
+ */
+
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoImg from '../../assets/img/logo.svg';
@@ -7,7 +11,7 @@ const Header = () => {
     { title: 'Accueil', path: '/home' },
     { title: 'Profil', path: '/#' },
     { title: 'Réglage', path: '/#' },
-    { title: 'Communauté', path: '/#' }
+    { title: 'Communauté', path: '/error' }
   ]
   return (
     <Container className='Header'>
@@ -26,6 +30,8 @@ const Header = () => {
 export default Header;
 
 const Container = styled.div`
+  z-index: 1;
+  grid-area: hd;
   display: flex;
   width: 100%;
   align-items: center;

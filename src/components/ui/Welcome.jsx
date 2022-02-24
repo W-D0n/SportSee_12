@@ -17,6 +17,7 @@ Welcome.propTypes = {
 };
 
 const Container = styled.div`
+grid-area: ti;
 display: flex;
 flex-direction: column;
 `

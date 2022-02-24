@@ -1,3 +1,6 @@
+/**
+ * @description The LineChart of user's time sessions
+ */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';

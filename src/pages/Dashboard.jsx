@@ -1,14 +1,13 @@
 /**
- * 
+ * @description this page was made for user profil.
  */
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import UserService from '../services/UserService';
-import { Welcome, Tracking, Metrics, Session, Stats, Score } from './../components/ui';
+import { Welcome, Tracking, Metrics, Session, Stats, Score, Loader } from './../components/ui';
 
-import Loading from './Loading'
 import Error404 from './Error404'
 
 export const Dashboard = () => {
@@ -22,6 +21,7 @@ export const Dashboard = () => {
 
   useEffect(() => {
     UserService.get(currentUserID).then(res => {
+      console.log('response.status: ', res.status);
       setUser(res);
     })
     UserService.getActivities(currentUserID).then(res => {
@@ -34,6 +34,9 @@ export const Dashboard = () => {
       setPerf(res);
     })
   }, []);
+
+
+
   if (user) {
     if (user.todayScore && user.userInfos && user.keyData && activities && sessions && perf) {
       return (
@@ -42,35 +45,51 @@ export const Dashboard = () => {
             <Welcome firstName={user.userInfos.firstName} />
             <GraphContainer>
               <Tracking activities={activities} />
-              <Metrics metrics={user.keyData} />
               <Performance>
                 <Session sessions={sessions} />
                 <Stats {...perf} />
                 <Score userScore={user.todayScore} />
               </Performance>
+              <Metrics metrics={user.keyData} />
             </GraphContainer>
           </Container>
         </>
       )
     }
-    return <Loading />;
+    return (!user.id === currentUserID ? <Error404 /> : <Loader />);
   }
   return <Error404 />;
 };
 
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-inline: 5rem;
-`;
-const GraphContainer = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
-  width: 100%;
-`;
-const Performance = styled.section`
-  display: flex;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "ti ti ti ti ti ti"
+    "ch ch ch ch ch ch";
+  margin: 3rem 5rem;
+  width:100%;
+  `;
+const GraphContainer = styled.div`
+  grid-area: ch;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+  "track track track metric"
+  "track track track metric"
+  "track track track metric"
+  "track track track metric"
+  "perf perf perf metric"
+  "perf perf perf metric"
+  "perf perf perf metric"
+  "perf perf perf metric";
   gap: 2rem;
-  margin-top: 3rem;
+  `;
+const Performance = styled.section`
+  grid-area: perf;
+  display: flex;
+  align-items:flex-end;
 `;

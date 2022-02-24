@@ -1,3 +1,6 @@
+/**
+ * @description The PieChart of user's todayScore
+ */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts';
