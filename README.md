@@ -66,7 +66,7 @@ yarn install
 npm start
 ```
 
-4. Front-end is now rendered at URL `http://localhost:3001` with mocked data. If you want to switch to real backend data, go to `my-app/src/data/config.js` [(this file)](https://github.com/ebz8/ElodieBoinZanchi_12_050222-/blob/9cfa6384b9b182fb9f3ff46fb5185f03a0860b4d/my-app/src/data/config.js) and set `currentUrl` constant from `urlMockAPI` to `urlAPI`.
+4. Front-end is now rendered at URL `http://localhost:3001` with mocked data. If you want to switch to real backend data, go to `global.js` [(this file)](https://github.com/ebz8/ElodieBoinZanchi_12_050222-/blob/9cfa6384b9b182fb9f3ff46fb5185f03a0860b4d/my-app/src/data/config.js) and set `currentUrl` constant from `urlMockAPI` to `urlAPI`.
 
 5. You also can build a production version and serve it with a static server :
 
