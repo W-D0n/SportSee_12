@@ -1,31 +1,47 @@
 ﻿<p align="center">
-  <img src="/img/logoOnly.svg?raw=true" alt="Sublime's custom image"/>
+  <img src="/src/assets/img/logo.svg" width="500px"alt="Sublime's custom image"/>
 </p>
+
+---  
+[![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://fr.reactjs.org/)
+[![](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+[![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/)
+[![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](/)
+[![](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
+[![](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
+[![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com)
+---
+[![wakatime](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9.svg)](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9)
+  ---
+  
+
+
+
 # SportSee
 
-with Create React App, Recharts, JsDoc & better-doc
+Create with React App, Vite, Recharts, JsDoc & better-doc
 
-live [app demo on Netlify](https://elodieboinzanchi-12050222.netlify.app/) & live [documentation here](https://ebz8.github.io/ElodieBoinZanchi_12_050222-/)
+- live [demo (on Vercel)](https://wardi-kamal-12-16022022.vercel.app/) 
+- live [documentation](https://wardi-kamal-12-16022022.vercel.app/)
 
 ### Prerequisites
 
-- [NodeJS (**v.12.18**)](https://nodejs.org/en/)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [NodeJS](https://nodejs.org/en/)
+- [yarn](https://yarnpkg.com/) or npm
+- [Vite](https://vitejs.dev/)
 
 ### 1 | Back-end
 
 1. Download or clone the back-end's repository :
 
 ```sh
-git clone https://github.com/ebz8/P9-front-end-dashboard.git
+git clone https://github.com/WARDI-Kamal/P9-front-end-dashboard.git
 ```
 
 2. Install dependencies :
 
 ```sh
-# NPM
-npm install
-
 # Yarn
 yarn install
 ```
@@ -33,9 +49,6 @@ yarn install
 3. Launch back-end on port 3000 (default port) :
 
 ```sh
-# NPM
-npm run start
-
 # Yarn
 yarn dev
 ```
@@ -49,36 +62,22 @@ yarn dev
 2. Install dependencies:
 
 ```sh
-# NPM
-npm install
-
 # Yarn
 yarn install
 ```
 
-3. Launch dev server on port 3001 :
+3. Launch dev server on port 3000 :
 
 ```sh
-# NPM
-npm start
+# Yarn
+yarn dev
 ```
 
-4. Front-end is now rendered at URL `http://localhost:3001` with mocked data. If you want to switch to real backend data, go to `global.js` [(this file)](https://github.com/ebz8/ElodieBoinZanchi_12_050222-/blob/9cfa6384b9b182fb9f3ff46fb5185f03a0860b4d/my-app/src/data/config.js) and set `currentUrl` constant from `urlMockAPI` to `urlAPI`.
+4. Front-end is now rendered at URL `http://localhost:3001` with mocked data. If you want to switch to real backend data, go to `src/services/Global.js` [(this file)](https://github.com/WARDI-Kamal/WARDI-Kamal_12_16022022/blob/f355da8a87b0c779a0ddf1677205f8022cc812ef/src/services/Global.js) and set `ENV` constant from `dev` to `prod`.
 
 5. You also can build a production version and serve it with a static server :
 
 ```sh
-# NPM
-npm run build
-npm run serve
-
 # Yarn
-yarn global add serve
-serve -s build
+yarn build
 ```
-
-
-
-
----
-[![wakatime](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9.svg)](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9)
