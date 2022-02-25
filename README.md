@@ -47,7 +47,7 @@ yarn dev
 
 1. Clone this repository :
 
-`git clone https://github.com/ebz8/ElodieBoinZanchi_12_050222-.git`
+`git clone https://github.com/WARDI-Kamal/WARDI-Kamal_12_16022022.git`
 
 2. Install dependencies:
 
