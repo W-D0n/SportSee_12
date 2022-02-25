@@ -1,101 +1,84 @@
 ﻿<p align="center">
   <img src="/img/logoOnly.svg?raw=true" alt="Sublime's custom image"/>
 </p>
-# Getting Started with Create React App
+# SportSee
+[Openclassrooms Front-End](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react) | P12 | VERSION 1.0 | 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) [![Netlify Status](https://api.netlify.com/api/v1/badges/f59af8bb-a50b-4eff-a2de-7f146f47850d/deploy-status)](https://app.netlify.com/sites/elodieboinzanchi-12050222/deploys)
 
-## Available Scripts
+with Create React App, Sass, Recharts, JsDoc & better-doc
 
-In the project directory, you can run:
+live [app demo on Netlify](https://elodieboinzanchi-12050222.netlify.app/) & live [documentation here](https://ebz8.github.io/ElodieBoinZanchi_12_050222-/)
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [NodeJS (**v.12.18**)](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1 | Back-end
 
-### `npm test`
+1. Download or clone the back-end's repository :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+git clone https://github.com/ebz8/P9-front-end-dashboard.git
+```
 
-### `npm run build`
+2. Install dependencies :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+# NPM
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Yarn
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Launch back-end on port 3000 (default port) :
 
-### `npm run eject`
+```sh
+# NPM
+npm run start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Yarn
+yarn dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2 | Front-end
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone this repository :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`git clone https://github.com/ebz8/ElodieBoinZanchi_12_050222-.git`
 
-## Learn More
+2. Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+# NPM
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Yarn
+yarn install
+```
 
-### Code Splitting
+3. Launch dev server on port 3001 :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+# NPM
+npm start
+```
 
-### Analyzing the Bundle Size
+4. Front-end is now rendered at URL `http://localhost:3001` with mocked data. If you want to switch to real backend data, go to `my-app/src/data/config.js` [(this file)](https://github.com/ebz8/ElodieBoinZanchi_12_050222-/blob/9cfa6384b9b182fb9f3ff46fb5185f03a0860b4d/my-app/src/data/config.js) and set `currentUrl` constant from `urlMockAPI` to `urlAPI`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. You also can build a production version and serve it with a static server :
 
-### Making a Progressive Web App
+```sh
+# NPM
+npm run build
+npm run serve
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
-[![forthebadge](https://forthebadge.com/images/badges/cc-0.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
-
-# Sleep Well : the smart alarm-clock app
-
-Sleep Well aims at developing a smart alarm clock for iPhones that monitors your breathing rhythm while you sleep to determine your sleep cycles.
-
-## Technologies
-- JS
-- CSS 
-- React
-
-## Contribute to the project
-
-Sleep Well is an open source project. Feel free to fork the source and contribute with your own features.
-
-## Authors
-
-Our code squad : Francis & Stéphane
-
-## Licensing
-
-This project was built under the Creative Commons licence.
+# Yarn
+yarn global add serve
+serve -s build
+```
 
 
 
