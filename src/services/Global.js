@@ -7,5 +7,5 @@ export const BASE_URL = 'http://localhost:300/'
 /**
  * @type{String}
  */
-// export const ENV = 'dev';
-export const ENV = 'prod';
+export const ENV = 'dev';
+// export const ENV = 'prod';
