@@ -22,7 +22,7 @@ Welcome.propTypes = {
   firstName: propTypes.string.isRequired
 };
 
-const Container = styled.div`
+const Container = styled.header`
 grid-area: ti;
 display: flex;
 flex-direction: column;

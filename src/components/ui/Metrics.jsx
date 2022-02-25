@@ -8,11 +8,13 @@ import Lipides from '../../assets/img/fat-icon.svg';
 /**
  * Here are populate some metrics of user into cards
  * @component
+ * @property {String} title - name of information
+ * @property {}
  * @param {Object} metrics props
- * @property {!Number} metrics.calorieCount  number of calorie
- * @property {!Number} metrics.proteinCount  number of protein
- * @property {!Number} metrics.carbohydrateCount  number of carbohydrate
- * @property {!Number} metrics.lipidCount  number of lipid
+ * @property {!Number} metrics.calorieCount - number of calorie
+ * @property {!Number} metrics.proteinCount - number of protein
+ * @property {!Number} metrics.carbohydrateCount - number of carbohydrate
+ * @property {!Number} metrics.lipidCount - number of lipid
  * @returns {reactElement}
  *  
  */
@@ -25,7 +27,8 @@ const Metrics = ({ metrics }) => {
     { title: 'Glucides', iconSrc: Glucides, value: metrics.carbohydrateCount, unit: 'g' },
     { title: 'Lipides', iconSrc: Lipides, value: metrics.lipidCount, unit: 'g' },
   ];
-
+  console.log('type : ', typeof (data.iconSrc))
+  console.log('type : ', typeof (data.title))
   return (
     <Container>
       {data &&
@@ -47,12 +50,17 @@ export default Metrics;
 Metrics.propTypes = {
   metrics: propTypes.object.isRequired
 };
-const Container = styled.div`
+const Container = styled.section`
 grid-area: metric;
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: space-between;
-  grid-column: 4;
+  column: 6/7;
+
+  @media screen and (max-width: 1270px) {
+    flex-direction: row;
+    gap: 1rem;
+  }
 `
 const Card = styled.div`
   display: flex;
@@ -60,9 +68,13 @@ const Card = styled.div`
   padding: 2rem;
   border-radius: 5px;
   background-color: #FBFBFB;
-  height: 124px;
-  width: 258px;
+  height: 8.5rem;
+  width: 16rem;
 
+  @media screen and (max-width: 1270px) {
+    height: 6.5rem;
+    padding: 1rem;
+  }
 
   span{
     font-size:14px;

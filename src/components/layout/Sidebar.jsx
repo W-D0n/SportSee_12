@@ -7,9 +7,11 @@ import BikingIcon from '../../assets/img/bike-icon.svg';
 import MuscleIcon from '../../assets/img/muscle-icon.svg';
 
 /**
- * Sidebar
- * @component
- * 
+ * Side navigation menu
+ * Links are implemented but there is no route yet.
+ * @component 
+ * @property {String} title - name of menu item
+ * @property {String} path - url of the redirection
  * @returns {reactElement}  
  */
 const Sidebar = () => {

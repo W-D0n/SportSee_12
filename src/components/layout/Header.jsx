@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import LogoImg from '../../assets/img/logo.svg';
 
 /**
+ * Top navigation menu.
  * Links are implemented but there is no route yet.
  * @component
  * 
- * @returns {reactElement} *  
+ * @property {String} title - name of menu item
+ * @property {String} path - url of the redirection
+ * 
+ * @returns {reactElement} 
  */
 
 const Header = () => {

@@ -92,7 +92,6 @@ CustomCursor.propTypes = {
 };
 const Section = styled.section`
 grid-area: track;
-grid-column:1/4;
 height: 320px;
 width: 100%;
 background: #FBFBFB;
@@ -104,6 +103,8 @@ padding: 1.5rem;
 .recharts-responsive-container {
   margin-top: auto;
 }
+
+@media screen and (max-width: 1270px) {}
 `;
 const Header = styled.div`
 display: flex;

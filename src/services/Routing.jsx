@@ -7,6 +7,7 @@ import Error404 from '../pages/Error404';
 
 /**
  * Routing logic
+ * @type {Function}
  */
 function Routing() {
   return (
