@@ -2,11 +2,8 @@
   <img src="/img/logoOnly.svg?raw=true" alt="Sublime's custom image"/>
 </p>
 # SportSee
-[Openclassrooms Front-End](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react) | P12 | VERSION 1.0 | 
 
- ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) [![Netlify Status](https://api.netlify.com/api/v1/badges/f59af8bb-a50b-4eff-a2de-7f146f47850d/deploy-status)](https://app.netlify.com/sites/elodieboinzanchi-12050222/deploys)
-
-with Create React App, Sass, Recharts, JsDoc & better-doc
+with Create React App, Recharts, JsDoc & better-doc
 
 live [app demo on Netlify](https://elodieboinzanchi-12050222.netlify.app/) & live [documentation here](https://ebz8.github.io/ElodieBoinZanchi_12_050222-/)
 
@@ -47,7 +44,7 @@ yarn dev
 
 1. Clone this repository :
 
-`git clone https://github.com/ebz8/ElodieBoinZanchi_12_050222-.git`
+`git clone https://github.com/WARDI-Kamal/WARDI-Kamal_12_16022022.git`
 
 2. Install dependencies:
 
