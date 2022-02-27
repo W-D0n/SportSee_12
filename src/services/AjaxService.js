@@ -29,6 +29,7 @@ const AjaxService = {
           })
           .catch(error => {
             reject(error)
+            alert('request went wrong')
           })
       } else {
         switch (mockObj) {

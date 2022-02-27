@@ -24,6 +24,12 @@ export const Dashboard = () => {
   const [sessions, setSessions] = useState(null)
   const [perf, setPerf] = useState(null)
 
+  /**
+   * will be use to update states to get data
+   * @function
+   * 
+   * @returns {Promise} res 
+   */
   useEffect(() => {
     UserService.get(currentUserID).then(res => {
       setUser(res);
