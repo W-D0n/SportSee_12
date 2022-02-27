@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ﻿﻿<p align="center">
   <img src="/src/assets/img/logo.svg" width="500px" alt="Sublime's custom image"/>
+=======
+﻿<p align="center">
+  <img src="/src/assets/img/logo.svg" width="500px"alt="Sublime's custom image"/>
+>>>>>>> d011cb5b7ebb7d9eddf4af376f63192cf4719bf3
 </p>
 
 ---  
@@ -27,6 +32,7 @@ Create with React App, Vite, Recharts, JsDoc & better-doc
 
 ### Prerequisites
 
+<<<<<<< HEAD
 - [NodeJS](https://nodejs.org/en/) v16.13.1
 - [yarn](https://yarnpkg.com/) v1.22.17 (or npm)
 - [Vite](https://vitejs.dev/) v2.8.0 - Local server and building tool (React Template)
@@ -46,6 +52,11 @@ Create with React App, Vite, Recharts, JsDoc & better-doc
 - [prop-types](https://www.npmjs.com/package/prop-types)v15.8.1
 - [JSDoc](https://jsdoc.app/) v3.6.10
 - [better-docs](https://github.com/SoftwareBrothers/better-docs) v2.7.2
+=======
+- [NodeJS](https://nodejs.org/en/)
+- [yarn](https://yarnpkg.com/) or npm
+- [Vite](https://vitejs.dev/)
+>>>>>>> d011cb5b7ebb7d9eddf4af376f63192cf4719bf3
 
 ### 1 | Back-end
 
@@ -97,5 +108,8 @@ yarn dev
 # Yarn
 yarn build
 ```
+<<<<<<< HEAD
 
 6. If you need to install Vite : [Link to documentation](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+=======
+>>>>>>> d011cb5b7ebb7d9eddf4af376f63192cf4719bf3
