@@ -9,7 +9,8 @@ import Lipides from '../../assets/img/fat-icon.svg';
  * Here are populate some metrics of user into cards
  * @component
  * @property {String} title - name of information
- * @property {}
+ * @property {String} iconSrc - svg file's path
+ * @property {Number} value - quantity of target element
  * @param {Object} metrics props
  * @property {!Number} metrics.calorieCount - number of calorie
  * @property {!Number} metrics.proteinCount - number of protein
@@ -27,8 +28,7 @@ const Metrics = ({ metrics }) => {
     { title: 'Glucides', iconSrc: Glucides, value: metrics.carbohydrateCount, unit: 'g' },
     { title: 'Lipides', iconSrc: Lipides, value: metrics.lipidCount, unit: 'g' },
   ];
-  console.log('type : ', typeof (data.iconSrc))
-  console.log('type : ', typeof (data.title))
+
   return (
     <Container>
       {data &&
@@ -50,6 +50,7 @@ export default Metrics;
 Metrics.propTypes = {
   metrics: propTypes.object.isRequired
 };
+
 const Container = styled.section`
 grid-area: metric;
   display: flex;
@@ -61,7 +62,7 @@ grid-area: metric;
     flex-direction: row;
     gap: 1rem;
   }
-`
+`;
 const Card = styled.div`
   display: flex;
   gap: 2rem;
@@ -85,10 +86,10 @@ const Card = styled.div`
     font-size:20px;
     font-weight: 700;
   }
-  `
+`;
 
 const Description = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-`
+`;

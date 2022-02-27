@@ -1,9 +1,14 @@
-/**
- * @description The PieChart of user's todayScore
- */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts';
+
+/**
+ * The PieChart of user's todayScore
+ * @component
+ * @property {String} name - label used for the chart
+ * @property {!Number} value - quantity
+ * @param {!Number} userScore prop
+ */
 
 const Score = ({ userScore }) => {
   const data = [
@@ -37,7 +42,11 @@ const Score = ({ userScore }) => {
 }
 export default Score;
 
-
+/**
+ * Custom Legend by tweaking component props and passing in custom component
+ * @param {Array} payload [0] (Number) Represent completion score
+ * @returns {reactElement} Component if active
+ */
 const CustomLegend = ({ payload }) => {
   if (payload && payload.length) {
     return (
@@ -48,6 +57,13 @@ const CustomLegend = ({ payload }) => {
       </LegendContainer>
     )
   }
+};
+
+Score.propTypes = {
+  userScore: propTypes.number
+};
+CustomLegend.propTypes = {
+  payload: propTypes.array
 };
 
 const Section = styled.div`
@@ -83,10 +99,3 @@ const Text = styled.p`
   font-size: 16px;
   color: #9B9EAC;
 `;
-
-Score.propTypes = {
-  userScore: propTypes.number
-};
-CustomLegend.propTypes = {
-  payload: propTypes.array
-};

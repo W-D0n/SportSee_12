@@ -1,12 +1,17 @@
-/**
- * @description The RadarChart of user's stats
- */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
 
 
-
+/**
+ * The PieChart of user's performance by each kind of category
+ * @component
+ * @property {String} name - label used for the chart
+ * @property {!Number} value - quantity
+ * @param {Array} data props objects array of each score
+ * @property {!Number} data.value - quantity
+ * @property {!Number} data.kind - category
+ */
 const Stats = ({ data }) => {
 
   const french = {

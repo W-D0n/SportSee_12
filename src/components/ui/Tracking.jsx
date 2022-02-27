@@ -53,6 +53,12 @@ const Tracking = ({ activities }) => {
 
 export default Tracking;
 
+/**
+ * Custom Tooltip by tweaking component props and passing in custom component
+ * @param {Boolean} active active state
+ * @param {Array} payload [0] (Number) Represent time session
+ * @returns {reactElement|null} Component if active, or null
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -62,10 +68,15 @@ const CustomTooltip = ({ active, payload }) => {
       </TooltipContainer>
     );
   }
-
   return null;
 };
 
+/**
+ * Custom Cursor by tweaking component props and passing in custom component
+ * @param {Boolean} active active state
+ * @param {Array} payload [0] :  Yaxis 1 (kg), [1] : Yaxis 2 (kCal)
+ * @returns {reactElement} Component if active
+ */
 const CustomCursor = ({ x, y, width, height }) => {
   return (
     <Rectangle
@@ -80,6 +91,8 @@ const CustomCursor = ({ x, y, width, height }) => {
 Tracking.propTypes = {
   activities: propTypes.array.isRequired
 };
+
+
 CustomTooltip.propTypes = {
   active: propTypes.bool,
   payload: propTypes.array

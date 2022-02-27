@@ -1,10 +1,15 @@
-/**
- * @description The LineChart of user's time sessions
- */
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
+/**
+ * The Linechart of average durations of session of the week
+ * @param {Object} sessions
+ * @param {String} sessions.day
+ * @param {String} sessions.sessionLength
+ * 
+ * @returns {reactElement} 
+ */
 
 const Session = ({ sessions }) => {
   const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
@@ -39,6 +44,12 @@ const Session = ({ sessions }) => {
 
 export default Session;
 
+/**
+ * Custom Tooltip by tweaking component props and passing in custom component
+ * @param {Boolean} active active state
+ * @param {Array} payload [0] (Number) Represent time session
+ * @returns {reactElement|null} Component if active, or null
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -50,6 +61,14 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+Session.propTypes = {
+  sessions: propTypes.array.isRequired
+};
+CustomTooltip.propTypes = {
+  active: propTypes.bool,
+  payload: propTypes.array
+};
+
 const TooltipContainer = styled.div`
 Width:2.5rem;
 Height: 1.5rem;  
@@ -59,7 +78,6 @@ font-size: 10px;
 font-weight:600;
 background-color: #FFFFFF;
 `;
-
 const Section = styled.div`
   position: relative;
   width: 258px;
@@ -67,7 +85,6 @@ const Section = styled.div`
   border-radius: 5px;
   background-color: #FF0000;
 `;
-
 const Header = styled.div`
   position: relative;
   overflow-wrap: break-word;
@@ -84,11 +101,3 @@ const Header = styled.div`
     opacity: 0.5;
   }  
 `;
-
-Session.propTypes = {
-  sessions: propTypes.array.isRequired
-};
-CustomTooltip.propTypes = {
-  active: propTypes.bool,
-  payload: propTypes.array
-};

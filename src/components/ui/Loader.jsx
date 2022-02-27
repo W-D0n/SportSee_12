@@ -4,8 +4,7 @@ import styled from 'styled-components';
  * Loader component with a svg
  * @component
  *
- * @returns {reactElement}
- *  
+ * @returns {reactElement}  
  */
 
 const Loading = () => {

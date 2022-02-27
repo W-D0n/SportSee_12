@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/ui/Session.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/ui/Session.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import styled from 'styled-components';
+import propTypes from 'prop-types';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+
+/**
+ * The Linechart of average durations of session of the week
+ * @param {Object} sessions
+ * @param {String} sessions.day
+ * @param {String} sessions.sessionLength
+ * 
+ * @returns {reactElement} 
+ */
+
+const Session = ({ sessions }) => {
+  const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
+  const formatDay = (item) => daysWeek[item];
+
+  return (
+    &lt;Section>
+      &lt;Header>
+        &lt;h2>Durée moyenne des sessions&lt;/h2>
+      &lt;/Header>
+      &lt;ResponsiveContainer width='100%' height='100%' >
+        &lt;LineChart data={sessions} margin={{ top: 5, right: 10, left: 10, bottom: 0 }}>
+          &lt;XAxis
+            dataKey='day'
+            axisLine={false}
+            tickFormatter={formatDay}
+            tickMargin={0}
+            tickLine={false}
+            stroke='rgba(255, 255, 255, 0.5)'
+            padding={{ left: 5, right: 5 }}
+            fontSize={12}
+            fontWeight={600}
+          />
+          &lt;YAxis hide domain={['dataMin-10', 'dataMax+20']} />
+          &lt;Tooltip content={&lt;CustomTooltip />} cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 40 }} />
+          &lt;Line type='monotone' dataKey='sessionLength' stroke='rgba(255, 255, 255, 0.6)' strokeWidth={2} activeDot={{ background: '#FFFFFF', stroke: 'rgba(255, 255, 255, 0.198345)', strokeWidth: 10, r: 4 }} dot={{ r: 0 }} />
+        &lt;/LineChart>
+      &lt;/ResponsiveContainer>
+    &lt;/Section>
+  )
+};
+
+export default Session;
+
+/**
+ * Custom Tooltip by tweaking component props and passing in custom component
+ * @param {Boolean} active active state
+ * @param {Array} payload [0] (Number) Represent time session
+ * @returns {reactElement|null} Component if active, or null
+ */
+const CustomTooltip = ({ active, payload }) => {
+  if (active &amp;&amp; payload &amp;&amp; payload.length) {
+    return (
+      &lt;TooltipContainer>
+        &lt;div>{`${payload[0].value} `}min&lt;/div>
+      &lt;/TooltipContainer>
+    );
+  }
+  return null;
+};
+
+Session.propTypes = {
+  sessions: propTypes.array.isRequired
+};
+CustomTooltip.propTypes = {
+  active: propTypes.bool,
+  payload: propTypes.array
+};
+
+const TooltipContainer = styled.div`
+Width:2.5rem;
+Height: 1.5rem;  
+text-align: center;
+padding-top:5px;
+font-size: 10px;
+font-weight:600;
+background-color: #FFFFFF;
+`;
+const Section = styled.div`
+  position: relative;
+  width: 258px;
+  height: 263px;
+  border-radius: 5px;
+  background-color: #FF0000;
+`;
+const Header = styled.div`
+  position: relative;
+  overflow-wrap: break-word;
+
+  h2 {
+    width: 12rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #FFFFFF;
+    opacity: 0.5;
+  }  
+`;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Card.html">Card</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="Error404.html">Error404</a></li><li><a href="Header.html">Header</a></li><li><a href="Home.html">Home</a></li><li><a href="Loading.html">Loading</a></li><li><a href="Metrics.html">Metrics</a></li><li><a href="Score.html">Score</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="Stats.html">Stats</a></li><li><a href="Tracking.html">Tracking</a></li><li><a href="Welcome.html">Welcome</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AjaxService">AjaxService</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#BASE_URL">BASE_URL</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomLegend">CustomLegend</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#ENV">ENV</a></li><li><a href="global.html#Routing">Routing</a></li><li><a href="global.html#Session">Session</a></li><li><a href="global.html#UserService">UserService</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Feb 28 2022 03:33:57 GMT+0400 (heure du Golfe)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

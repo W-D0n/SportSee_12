@@ -26,14 +26,14 @@ const Container = styled.header`
 grid-area: ti;
 display: flex;
 flex-direction: column;
-`
+`;
 const Head = styled.h1`
 font-size: 48px;
 font-weight: 600;
-`
+`;
 const UserName = styled.span`
 color: red;
-`
+`;
 const Message = styled.span`
 font-size: 18px;
-`
+`;

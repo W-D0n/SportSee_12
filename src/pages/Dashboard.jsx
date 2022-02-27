@@ -12,7 +12,6 @@ import Error404 from './Error404'
  * 
  * @returns {reactElement}
  */
-
 export const Dashboard = () => {
   // Get current id from url
   let { id } = useParams();
@@ -27,8 +26,8 @@ export const Dashboard = () => {
   /**
    * will be use to update states to get data
    * @function
-   * 
-   * @returns {Promise} res 
+   * @param {String} currentUserID Id from url
+   * @returns {Promise} responses with user information and data needed for graphs 
    */
   useEffect(() => {
     UserService.get(currentUserID).then(res => {
