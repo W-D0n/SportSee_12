@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="/src/assets/img/logo.svg" width="500px"alt="Sublime's custom image"/>
 </p>
 
