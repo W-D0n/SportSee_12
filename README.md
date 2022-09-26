@@ -3,11 +3,11 @@
 </p>
 
 ---
-[![](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&labelColor=fff&logoColor=FFD62E)](https://vitejs.dev/guide/)
-[![](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&labelColor=fff&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
-[![](https://img.shields.io/badge/React-61DAFB?style=flat-square&labelColor=fff&logo=react&logoColor=61DAFB)](https://beta.reactjs.org/)
-[![](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&labelColor=fff&logo=react-router&logoColor=CA4245)](https://reactrouter.com/en/main)
-[![](https://img.shields.io/badge/Styled_components-DB7093?style=flat-square&labelColor=fff&logo=styled-components&logoColor=DB7093)](https://styled-components.com/docs)
+[![](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&labelColor=4b4453&logoColor=FFD62E)](https://vitejs.dev/guide/)
+[![](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&labelColor=4b4453&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![](https://img.shields.io/badge/React-61DAFB?style=flat-square&labelColor=4b4453&logo=react&logoColor=61DAFB)](https://beta.reactjs.org/)
+[![](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&labelColor=4b4453&logo=react-router&logoColor=CA4245)](https://reactrouter.com/en/main)
+[![](https://img.shields.io/badge/Styled_components-DB7093?style=flat-square&labelColor=4b4453&logo=styled-components&logoColor=DB7093)](https://styled-components.com/docs)
 ---
 
 ## Summary
