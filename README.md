@@ -2,98 +2,61 @@
   <img src="/src/assets/img/logo.svg" width="500px"alt="Sublime's custom image"/>
 </p>
 
----  
-[![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://fr.reactjs.org/)
-[![](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
-[![](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-[![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/)
-[![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](/)
-[![](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
-[![](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
-[![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com)
 ---
-[![wakatime](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9.svg)](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9)
-  ---
-  
+[![](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&labelColor=fff&logoColor=FFD62E)](https://vitejs.dev/guide/)
+[![](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&labelColor=fff&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![](https://img.shields.io/badge/React-61DAFB?style=flat-square&labelColor=fff&logo=react&logoColor=61DAFB)](https://beta.reactjs.org/)
+[![](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&labelColor=fff&logo=react-router&logoColor=CA4245)](https://reactrouter.com/en/main)
+[![](https://img.shields.io/badge/Styled_components-DB7093?style=flat-square&labelColor=fff&logo=styled-components&logoColor=DB7093)](https://styled-components.com/docs)
+---
 
-# SportSee
+## Summary
+### Context
+- Mise en situation / Case Study.
+- Sportsee (une startup dédiée au coaching sportif) va lancer une nouvelle version de la page profil permettant à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées / Sportsee (start-up dedicated to sport's coaches) will launch a new profile page that will allow user to track their sports sessions and calories burned.
+#### My function / Rôle
+- Frontend developper
+### Goal / Objectif
+- Mockup integration (descktop only).
+- Build UI with React and Proptypes.
+- Follow user stories.
+- Build charts with Recharts or D3.
+- API calls with fetch or Axios (start with mocked datas).
+- Write documentation in English (JsDoc).
 
-Create with React App, Vite, Recharts, JsDoc & better-doc
+---
+## Project
+### Assets
+- Backend repo : [Github](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+- Mockup : [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1)
+- User stories : [Notion](https://www.notion.so/openclassrooms/Copy-of-Dev4U-projet-Learn-Home-6686aa4b5f44417881a4884c9af5669e)
 
-- live [demo (on Vercel)](https://wardi-kamal-12-16022022.vercel.app/) 
-- live [documentation](https://wardi-kamal-12-16022022.vercel.app/)
-
-### Prerequisites
-
-- [NodeJS](https://nodejs.org/en/) v16.13.1
-- [yarn](https://yarnpkg.com/) v1.22.17 (or npm)
-- [Vite](https://vitejs.dev/) v2.8.0 - Local server and building tool (React Template)
-
+### Setup
 ### Dependencies
-
-- [React](https://fr.reactjs.org/) v17.0.2
-- [React-dom](https://www.npmjs.com/package/react-dom) v17.0.2
-- [React-router-dom](https://v5.reactrouter.com/web/guides/quick-start) v6
+- [Recharts](https://recharts.org/en-US/) v2.1.9
 - [Postcss](https://postcss.org/) v8.4.6
 - [Babel](https://babeljs.io/docs/en/) v7.17.2
 - [Autoprefixer](https://github.com/postcss/autoprefixer#browsers) v10.4.2 - Postcss plug-in
-- [Recharts](https://recharts.org/en-US/) v2.1.9
 - [Prettier](https://prettier.io/) v2.5.1
 - [EsLint](https://eslint.org/) v8.9.0
-- [styled-components](https://styled-components.com/) v5.3.3
 - [prop-types](https://www.npmjs.com/package/prop-types)v15.8.1
 - [JSDoc](https://jsdoc.app/) v3.6.10
 - [better-docs](https://github.com/SoftwareBrothers/better-docs) v2.7.2
+#### Install
+1. Clone repository (FRONT) : `git clone https://github.com/W-Kamal/SportSee_12.git`
+2. Clone repository (BACK) : `git clone https://github.com/W-Kamal/SportSee_12_back.git`
+3. Install dependencies (this project was made with yarn) : `yarn install`
+4. Launch local web server (FRONT + BACK) : `yarn dev`
+5. Backend is now rendered at URL `http://localhost:3000`.
+6. Frontend is now rendered at URL `http://localhost:3001` (or another port) with mocked data.
+7. If you want to switch to real backend data, go to `src/services/Global.js` and set `ENV` constant from `dev` to `prod`.
+---
+## Potential improvements / Améliorations possibles
+This project was made for learning a specific concept or tool. Therefore it might appear not complete.
+If I had to push further this project, I would work on :
+1. Build a home page.
+2. Performance optimisation.
+3. Build a backend.
 
-### 1 | Back-end
-
-1. Download or clone the back-end's repository :
-
-```sh
-git clone https://github.com/WARDI-Kamal/P9-front-end-dashboard.git
-```
-
-2. Install dependencies :
-
-```sh
-# Yarn
-yarn install
-```
-
-3. Launch back-end on port 3000 (default port) :
-
-```sh
-# Yarn
-yarn dev
-```
-
-### 2 | Front-end
-
-1. Clone this repository :
-
-`git clone https://github.com/WARDI-Kamal/WARDI-Kamal_12_16022022.git`
-
-2. Install dependencies:
-
-```sh
-# Yarn
-yarn install
-```
-
-3. Launch dev server on port 3000 :
-
-```sh
-# Yarn
-yarn dev
-```
-
-4. Front-end is now rendered at URL `http://localhost:3001` with mocked data. If you want to switch to real backend data, go to `src/services/Global.js` [(this file)](https://github.com/WARDI-Kamal/WARDI-Kamal_12_16022022/blob/f355da8a87b0c779a0ddf1677205f8022cc812ef/src/services/Global.js) and set `ENV` constant from `dev` to `prod`.
-
-5. You also can build a production version and serve it with a static server [OPTIONNAL] :
-
-```sh
-# Yarn
-yarn build
-```
-
-6. If you need to install Vite : [Link to documentation](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+---
+[![wakatime](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9.svg)](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/5be95b50-9fbf-4ee0-8b11-21bd44757db9)
