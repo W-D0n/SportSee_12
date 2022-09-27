@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/src/assets/img/logo.svg" width="300px"alt="Logo image"/>
+  <img src="/src/assets/img/logo.svg" width="400px"alt="Logo image"/>
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=flat-square&logo=vite&logoColor=fff" />
