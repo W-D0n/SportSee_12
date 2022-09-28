@@ -41,7 +41,7 @@
 #### Getting Started
 1. Clone repository (FRONT) : `git clone https://github.com/W-Kamal/SportSee_12.git`
 2. Clone repository (BACK) : `git clone https://github.com/W-Kamal/SportSee_12_back.git`
-3. Install dependencies (this project was made with yarn) : `pnpm* install`
+3. Install dependencies : `pnpm* install`
 4. Launch local web server (FRONT + BACK) : `pnpm* run dev`
 5. Backend is now rendered at URL `http://localhost:3000`.
 6. Frontend is now rendered at URL `http://localhost:3001` (or another port) with mocked data.
