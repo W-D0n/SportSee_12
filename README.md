@@ -34,22 +34,18 @@
 - User stories : [Notion](https://www.notion.so/openclassrooms/Copy-of-Dev4U-projet-Learn-Home-6686aa4b5f44417881a4884c9af5669e)
 ### Dependencies
 - [Recharts](https://recharts.org/en-US/) v2.1.9
-- [Postcss](https://postcss.org/) v8.4.6
-- [Babel](https://babeljs.io/docs/en/) v7.17.2
-- [Autoprefixer](https://github.com/postcss/autoprefixer#browsers) v10.4.2 - Postcss plug-in
-- [Prettier](https://prettier.io/) v2.5.1
-- [EsLint](https://eslint.org/) v8.9.0
 - [prop-types](https://www.npmjs.com/package/prop-types)v15.8.1
 - [JSDoc](https://jsdoc.app/) v3.6.10
 - [better-docs](https://github.com/SoftwareBrothers/better-docs) v2.7.2
 #### Getting Started
 1. Clone repository (FRONT) : `git clone https://github.com/W-Kamal/SportSee_12.git`
 2. Clone repository (BACK) : `git clone https://github.com/W-Kamal/SportSee_12_back.git`
-3. Install dependencies (this project was made with yarn) : `yarn install`
-4. Launch local web server (FRONT + BACK) : `yarn dev`
+3. Install dependencies (this project was made with yarn) : `pnpm* install`
+4. Launch local web server (FRONT + BACK) : `pnpm* run dev`
 5. Backend is now rendered at URL `http://localhost:3000`.
 6. Frontend is now rendered at URL `http://localhost:3001` (or another port) with mocked data.
 7. If you want to switch to real backend data, go to `src/services/Global.js` and set `ENV` constant from `dev` to `prod`.
+_*use any package manager that suits you_
 
 ## Potential improvements / Améliorations possibles
 This project was made for learning a specific concept or tool. Therefore it might appear not complete.
