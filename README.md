@@ -21,7 +21,7 @@
 ### Goal / Objectif
 - Mockup integration (descktop only).
 - Build UI with React and Proptypes.
-- Set up routes.
+- Set up the routes.
 - Follow user stories.
 - Build charts with Recharts or D3.
 - API calls with fetch or Axios (start with mocked datas).
